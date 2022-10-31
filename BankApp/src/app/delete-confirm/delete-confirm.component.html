@@ -1,0 +1,9 @@
+<div *ngIf="item" class="container">
+<div class="deleteAccount">
+    <h3 class="h3delete">Do you want to delete your account {{item}}</h3>
+</div>
+<div class="button">
+    <button class="deleteyes" (click)="delete()">YES</button>
+    <button class="deleteno" (click)="cancel()">NO</button>
+</div>
+</div>

@@ -1,0 +1,35 @@
+validating input
+-Angular Form Validation
+    1. template driven Form - html (difficult method)
+    2. Model driven Form - ts
+        2.1 - Reactive Form
+              - form group
+              - array
+              - controller
+
+
+npm i - to install node package module while cloning angular project    
+
+local storage in angular
+    -setItem()
+    -getItem()
+    -removeItem()
+
+[ngClass] - used to give class for form
+
+@input - for data sharing between parent to child
+@output - for data sharing between child to parent
+
+--------------------------------------------------------
+
+to create http request
+    import HttpClientModule
+        - class name HttpClient
+
+
+api request is a asynchronous request, so to solve asynchronous request in TypeScript we use RxJs method (in JS we use promise)
+                                                                                                |
+                                                                                             observable
+        for this method there are two chances - Resolve and Reject
+            Resolve - subscribe()            like in JS we use then() method
+            Reject  - catch()                like in JS we use catch() method

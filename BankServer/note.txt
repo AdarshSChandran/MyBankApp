@@ -1,0 +1,70 @@
+jwt - token generation - user authentication
+jsonwebtoken - library used to generate tokens --- npm i jsonwebtoken
+sign() - method to generate token 
+
+token generated and send to client
+
+
+token validation
+----------------
+
+middlewears - method 3 arguments - req,res,next
+
+1. application specific middlewear 
+2. Router specific middlewear
+
+mongo shell commands
+---------------------
+to see database
+    show dbs
+use database 
+    use BankServer
+see collections inside that dbs
+    show collections
+view datas inside collections
+    db.users.find()
+particular single data
+    db.users.findOne({acno:1000})
+      if acno is  
+        present - object
+        not present - null
+to insert data  
+    db.users.insertOne({"acno": 1001, "username": "sanji", "password": 123, "balance": 200000,"transaction":[]"})
+
+    mongodb have no structure
+
+display person having balance 100000 above
+    db.users.find({balance:{$gt:100000}})
+
+delete data
+    db.users.deleteOne({acno:1002})
+    delete count 1 
+    db.users.deleteOne({acno:1002})
+    delete count 0
+
+update
+    db.users.updateOne({username:"zoro"},{$set{username:"Zorooo"}})
+
+        db.users.updateOne({username:"Roger"},{$set{username:"Gol D Roger"}},upsert:true)
+
+
+
+CRUD  :  create,read,update,delete
+
+
+register   insert
+login      findOne
+deposit    update
+withdraw   update 
+
+
+
+Bank Server backend
+-------------------
+
+server mongodb integration
+  - mongoose library -  npm i mongoose
+
+
+different ports communication(data sharing) - cors (cross orgin resource sharing)
+        npm i cors

@@ -1,0 +1,76 @@
+<h1 style="color: slategrey; text-align: center;" class="p-3">Dashboard</h1>
+
+<div class="date text-muted"><h3>System Date and Time : {{sDetails | date :'medium'}}</h3></div>
+
+<div class="header">
+    <div class="p-3 mt-3 ms-3 text-muted">
+        <h1>Welcome {{user}},</h1>
+    </div>
+    <div class=" p-3 mt-3 ms-3 text-muted logout">
+        <button class="logout text-muted pe-3 btn btn-info" (click)="logout()">Logout</button>
+    </div>    
+</div>
+
+<div class="ms-2 ps-2 transaction">
+    <a class="link" routerLink="/transaction">View Your Transaction History</a>
+</div>
+<div class="delete"><button class="btn btn-danger" (click)="deleteconfirm()">Delete Account</button>
+</div>
+
+<app-delete-confirm (onCancel)="oncancel()" (onDelete)="onDelete($event)" [item]="acnum"></app-delete-confirm>
+
+
+<div [ngClass]="acnum?'style1':'' " class="container mt-5 mx-auto p-3" >
+    <h1 class="text-center text-muted text-white">Deposit</h1>
+    <form  (ngSubmit)="deposit()" [formGroup]="dashboardDepositForm">
+        
+        <div *ngIf="this.dashboardDepositForm.get('acnum')?.errors&&this.dashboardDepositForm.get('acnum')?.touched"  class="text-danger mt-3 ms-1 ps-2"><p>invalid account number</p></div>
+        <div class="mt-2 p-2">
+            <input name="acnumber" type="text" placeholder="enter account number" formControlName="acnum" class="form-control" id="acno">
+        </div>
+        
+        <div *ngIf="this.dashboardDepositForm.get('pswrd')?.errors&&this.dashboardDepositForm.get('pswrd')?.touched"  class="text-danger mt-3 ms-1 ps-2"><p>invalid password</p></div>
+        <div class="mt-2 p-2">
+            <input name="password" type="password" placeholder="enter account password" formControlName="pswrd" class="form-control" id="psw">
+        </div>
+        
+        <div *ngIf="this.dashboardDepositForm.get('amnt')?.errors&&this.dashboardDepositForm.get('amnt')?.touched"  class="text-danger mt-3 ms-1 ps-2"><p>enter an amount</p></div>
+        <div class="mt-2 p-2">
+            <input name="text" type="text" placeholder="amount to deposit" formControlName="amnt" class="form-control" id="amt">
+        </div>
+
+        <div class="text-center mt-2 p-2">
+        <button type="submit" class="btn btn-success">Deposit</button><br><br>
+        </div>
+    </form>
+    </div>
+           
+
+
+    <div [ngClass]="acnum?'style1':'' " class="container mt-5 mb-5 mx-auto p-3" >
+        <h1 class="text-center text-muted text-white">Withdraw</h1>
+        <form  (ngSubmit)="withdraw()" [formGroup]="dashboardWithdrawform">
+        <div *ngIf="this.dashboardWithdrawform.get('acnum1')?.errors&&this.dashboardWithdrawform.get('acnum1')?.touched"  class="text-danger mt-3 ms-1 ps-2"><p>invalid account number</p></div>
+        <div class="mt-2 p-2">
+            <input name="acnumber1" type="text" placeholder="enter account number" formControlName="acnum1" class="form-control" id="acno1">
+        </div>
+
+        <div *ngIf="this.dashboardWithdrawform.get('pswrd1')?.errors&&this.dashboardWithdrawform.get('pswrd1')?.touched"  class="text-danger mt-3 ms-1 ps-2"><p>invalid password</p></div>
+        <div class="mt-2 p-2">
+            <input name="password1" type="password" placeholder="enter password" formControlName="pswrd1" class="form-control" id="psw1">
+        </div>
+
+
+        <div *ngIf="this.dashboardWithdrawform.get('amnt1')?.errors&&this.dashboardWithdrawform.get('amnt1')?.touched"  class="text-danger mt-3 ms-1 ps-2"><p>enter an amount</p></div>
+        <div class="mt-2 p-2">
+            <input name="amount1" type="text" placeholder="amount to withdraw" formControlName="amnt1" class="form-control" id="amt1">
+        </div>
+        
+        <div class="text-center mt-2 p-2">
+            <button type="submit" class="btn btn-success">Withdraw</button><br><br>
+        </div>
+        </form>
+    </div>
+           
+
+    

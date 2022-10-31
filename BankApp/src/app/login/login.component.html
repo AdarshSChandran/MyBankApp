@@ -1,0 +1,21 @@
+
+<div class="heading text-muted m-3"><h3>{{aim}}</h3></div>
+<div class="container mt-5 mx-auto p-3" >
+        <h1 class="text-center text-muted text-white">Login Page</h1>
+       <form (ngSubmit)="login()" [formGroup]="loginForm">
+        <div *ngIf="this.loginForm.get('acno')?.errors&&this.loginForm.get('acno')?.touched"  class="text-danger mt-3 ms-1 ps-2"><p>invalid account number</p></div>
+        <div class="mt-2 p-2">
+            <input name="acnum" type="text" [placeholder]="placeHolder" formControlName="acno" class="form-control" id="acid">
+        </div>
+        <div *ngIf="this.loginForm.get('psw')?.errors&&this.loginForm.get('psw')?.touched"  class="text-danger mt-3 ms-1 ps-2"><p>invalid password</p></div>
+        <div class="mt-2 p-2">
+            <input name="psw" type="password" placeholder="Password" formControlName="psw" class="form-control" id="pid">
+        </div>
+        <div class="text-center mt-2 p-2">
+            <button type="submit" class="btn btn-success">login</button><br><br>
+            <p class="text-white text-muted">new user? <a href="" style="text-decoration: none;" routerLink="register" class="text-info">register here</a></p>
+        </div>
+       </form>
+               
+    
+    </div>

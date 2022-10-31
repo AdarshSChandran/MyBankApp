@@ -1,0 +1,46 @@
+
+.container{
+    max-width: 700px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background-color: rgb(0, 0, 0, 0.2);
+
+
+}
+.deleteAccount{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 10px;
+    
+    padding-bottom: 30px;
+    /* margin-bottom: 20px; */
+}
+.button{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-bottom: 10px;
+    
+}
+.deleteyes{
+    /* align-self: center; */
+    background-color: black;
+    color: antiquewhite;
+    width: 100px;
+}
+.deleteno{
+    /* align-self: center; */
+    background-color: black;
+    color: antiquewhite;
+    width: 100px;
+} 
+.deleteyes:hover{
+    background-color:rgba(0, 0, 0, 0.589);
+}
+.deleteno:hover{
+    background-color:rgba(0, 0, 0, 0.589);
+}
